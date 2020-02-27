@@ -1,0 +1,54 @@
+* {margin: 0; padding: 0;}
+
+body {
+    overflow-x: hidden;
+    background: #e2e6ef;
+    font-size: 14px;
+    user-select: none;
+    font-family: "微软雅黑", "Microsoft YaHei", "Apple LiGothic Medium", "Apple LiSung Light", "宋体", Arial, Helvetica, sans-serif;
+}
+
+ul,
+ol,
+li,
+dl,
+dd,
+p,
+input,
+img,
+textarea,
+frame,
+button {list-style: none; margin: 0; padding: 0; border: 0 none;}
+
+a,
+i,
+button,
+select,
+input {outline: none;}
+th {color: #202020 !important; background: #f4f4f4 !important; text-align: center !important;}
+
+.fl {float: left;}
+.fr {float: right;}
+.center {text-align: center;}
+.animation {transition: all 0.3s linear;}
+.marginAuto {margin: 0 auto;}
+.margin0 {margin: 0;}
+.marginT0 {margin-top: 0;}
+.marginR0 {margin-right: 0;}
+.marginB0 {margin-bottom: 0;}
+.marginL0 {margin-left: 0;}
+.margin5 {margin: 5px;}
+.marginT5 {margin-top: 5px;}
+.marginR5 {margin-right: 5px;}
+.marginB5 {margin-bottom: 5px;}
+.marginL5 {margin-left: 5px;}
+.margin10 {margin: 10px;}
+.marginT10 {margin-top: 10px;}
+.marginR10 {margin-right: 10px;}
+.marginB10 {margin-bottom: 10px;}
+.marginL10 {margin-left: 10px;}
+.margin20 {margin: 20px;}
+.marginT20 {margin-top: 20px;}
+.marginR20 {margin-right: 20px;}
+.marginB20 {margin-bottom: 20px;}
+.marginL20 {margin-left: 20px;}
