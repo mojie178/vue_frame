@@ -1,0 +1,54 @@
+/*
+ * @Title: element-ui 样式二次修改
+ * @Descripttion: 
+ * @Author: shaojihao
+ * @Date: 2021-01-20 17:26:09
+ * @LastEditTime: 2021-01-20 17:26:58
+ */
+
+ .el-dialog__header { padding: 15px 24px; border-bottom: 1px solid rgba(0, 0, 0, .09); }
+ .el-dialog__footer { border-top: 1px solid rgba(0, 0, 0, .09); }
+ .el-dialog.browser-dialog {
+   background-color: #053e5b;
+   background-image: linear-gradient(to bottom, #053e5b, #035570);
+   @media screen and (max-width: 512px) { width: 300px !important; }
+   .el-dialog__title { color: #fff !important; }
+   .el-dialog__body { color: #fff !important; }
+ }
+ 
+ .el-form-item__content>.el-select,
+ .el-form-item__content>.el-date-editor,
+ .el-form-item__content>.el-cascader {
+   width: 100% !important;
+ }
+ 
+ .el-dropdown-link {
+   margin-left: 12px;
+   cursor: pointer;
+   color: #409eff;
+   font-size: 12px;
+ }
+ 
+ .el-tooltip__popper { max-width: 600px; }
+ 
+ .el-image-viewer__btn.el-image-viewer__close {
+   .el-icon-circle-close { color: #fff !important; }
+ }
+ 
+ // 解决el-col在不同浏览器中可能出现的错位问题
+ .marginbug .el-col { height: 48px; min-height: 48px; }
+ 
+ // 导航菜单的间隙
+ .el-menu-item-group .el-menu-item-group__title {
+   padding: 0;
+   line-height: normal;
+   font-size: 12px;
+   color: #909399;
+ }
+ 
+ // 表格滚动条样式
+ .el-table__body-wrapper {
+   &::-webkit-scrollbar {width: 10px; height: 10px;}
+   &::-webkit-scrollbar-thumb { height: 50px; background-color: #ccc; }
+   &::-webkit-scrollbar-track { background-color: rgba(255,255,255,0.5) }
+ }
