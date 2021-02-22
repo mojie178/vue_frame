@@ -2,8 +2,6 @@
  * @Title: 图片放大展示
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-30 14:22:21
 -->
 
 <template>

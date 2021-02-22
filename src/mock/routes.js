@@ -2,8 +2,6 @@
  * @Title: 子路由文件
  * @Descripttion: 默认将第一个作为默认展示视图
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-06 15:30:27
  */
 
 export default [{

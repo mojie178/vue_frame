@@ -2,7 +2,6 @@
  * @Title: 富文本编辑器
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-02-02 11:37:18
 -->
 
 <template>

@@ -2,8 +2,6 @@
  * @Title: mutation-type
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:07:30
  */
 
 export const LOGIN = 'login';

@@ -2,8 +2,6 @@
  * @Title: 平台头部
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 15:08:33
- * @LastEditTime: 2021-01-20 09:45:11
 -->
 
 <template>

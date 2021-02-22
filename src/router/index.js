@@ -2,8 +2,6 @@
  * @Title: 路由入口
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:28:51
  */
 
 import Vue from 'vue';

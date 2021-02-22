@@ -2,8 +2,6 @@
  * @Title: 钱包密码输入
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 16:24:59
- * @LastEditTime: 2021-01-21 10:47:17
 -->
 
 <template>

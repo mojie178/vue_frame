@@ -2,8 +2,6 @@
  * @Title: 公共上传组件
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-29 11:49:18
- * @LastEditTime: 2021-02-06 15:19:43
 -->
 
 <template>

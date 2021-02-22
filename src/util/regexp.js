@@ -2,8 +2,6 @@
  * @Title: 公共正则
  * @Descripttion: 方法名称建议以 Regx 结尾
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-22 14:42:50
  */
 
 // 用户名(字母开头，4-12 位字母或数字的组合)

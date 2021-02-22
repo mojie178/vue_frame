@@ -2,8 +2,6 @@
  * @Title: state
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:08:02
  */
 
 import Vue from 'vue';

@@ -2,8 +2,6 @@
  * @Title: 平台脚部
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 14:48:51
- * @LastEditTime: 2021-01-21 15:43:09
 -->
 
 <template>

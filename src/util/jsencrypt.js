@@ -2,8 +2,6 @@
  * @Title: 密码加密
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-19 19:48:18
  */
 
 import { JSEncrypt } from 'jsencrypt';

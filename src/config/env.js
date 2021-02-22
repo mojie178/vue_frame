@@ -2,9 +2,6 @@
  * @Title: 基本环境配置
  * @Descripttion: 配置编译环境和线上环境之间的切换
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:23:09
- * 
  */
 
 let baseURL = ''; // API 接口路径

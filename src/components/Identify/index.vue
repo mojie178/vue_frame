@@ -2,8 +2,6 @@
  * @Title: 注册码
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-19 15:37:43
 -->
 <template>
   <div class="s-canvas">

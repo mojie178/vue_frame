@@ -2,8 +2,6 @@
  * @Title: App.vue
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-21 16:32:08
 -->
 
 <template>

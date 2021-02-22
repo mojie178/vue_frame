@@ -2,8 +2,6 @@
  * @Title: 公共验证
  * @Descripttion: 方法名称建议以 validate 开头
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-30 14:40:07
  */
 
 import {

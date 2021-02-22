@@ -2,8 +2,6 @@
  * @Title: 引导说明
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-21 08:45:27
- * @LastEditTime: 2021-02-06 15:25:17
 -->
 
 <template>

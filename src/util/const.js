@@ -2,8 +2,6 @@
  * @Title: 通用常量数据
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:25:36
  */
 
 import { findDictentryByDicttypeName } from '@/api';

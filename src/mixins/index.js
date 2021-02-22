@@ -2,8 +2,6 @@
  * @Title: 公共 mixins
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-21 17:27:41
  */
 
 import { DEFAULT_PAGE_SIZE, LOADING_TEXT } from '@/util/const';

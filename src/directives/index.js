@@ -2,8 +2,6 @@
  * @Title: 全局指令
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-21 17:28:05
  */
 
 import store from '@/store';

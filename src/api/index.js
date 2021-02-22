@@ -2,8 +2,6 @@
  * @Title: 公共类接口
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 14:31:42
  */
 
 import { jsonAxios } from '@/util/http';

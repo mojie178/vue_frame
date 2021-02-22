@@ -2,8 +2,6 @@
  * @Title: 基础内容页模板
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 16:52:16
 -->
 
 <template>

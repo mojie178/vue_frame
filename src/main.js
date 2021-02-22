@@ -2,8 +2,6 @@
  * @Title: main.js
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-21 17:00:00
  */
 
 import Vue from 'vue';

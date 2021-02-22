@@ -2,8 +2,6 @@
  * @Title: 加密解密
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 19:30:42
- * @LastEditTime: 2021-01-20 15:42:30
  */
 import CryptoJS from 'crypto-js';
 

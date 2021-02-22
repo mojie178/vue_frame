@@ -2,8 +2,6 @@
  * @Title: 公共过滤器
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-29 10:35:55
  */
 
 // 格式化货币

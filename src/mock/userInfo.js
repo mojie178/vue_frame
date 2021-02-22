@@ -2,8 +2,6 @@
  * @Title: 模拟用户
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-20 10:06:44
- * @LastEditTime: 2021-01-20 17:50:19
  */
 
 export default {

@@ -2,8 +2,6 @@
  * @Title: 404 页面
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-01-21 16:59:10
 -->
 
 <template>

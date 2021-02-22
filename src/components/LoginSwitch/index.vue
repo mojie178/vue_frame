@@ -2,8 +2,6 @@
  * @Title: 登录注册展示入口
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 15:47:27
- * @LastEditTime: 2021-01-21 15:43:52
 -->
 
 <template>

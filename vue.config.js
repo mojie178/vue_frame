@@ -1,9 +1,9 @@
 /*
- * @Title: 
+ * @Title: vue.config.js
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
  */
+
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 

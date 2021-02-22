@@ -2,8 +2,6 @@
  * @Title: axios 配置文件
  * @Descripttion: 
  * @Author: shaojihao
- * @Date: 2021-01-19 11:02:47
- * @LastEditTime: 2021-02-05 10:14:03
  */
 
 import Vue from 'vue';
