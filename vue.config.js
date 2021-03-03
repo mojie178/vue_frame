@@ -15,6 +15,12 @@ module.exports = {
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: config => {
     config.plugins.delete('prefetch');
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = '你想设置的title名字';
+        return args;
+      });
   },
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
