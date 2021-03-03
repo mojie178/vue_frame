@@ -13,9 +13,5 @@ export default [{
     component: 'About/guide',
     path: 'guide',
     meta: { id: 991, hidden: false, menuName: '引导说明', modelUrl: '/' }
-  }, {
-    component: 'About/text',
-    path: 'text',
-    meta: { id: 992, hidden: false, menuName: '测试页面', modelUrl: '/' }
   }]
 }];
