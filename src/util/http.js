@@ -10,6 +10,7 @@ import axios from 'axios';
 import * as types from '@/store/mutation-types';
 import { baseURL } from '@/config/env';
 import { spLogOut, spLogOutSys, spLogin } from '@/api';
+import { PROCESS_ENV_NODE_ENV } from './const.js';
 
 const ContentType = {
   json: 'application/json;charset=utf-8',
@@ -38,6 +39,7 @@ axios.defaults.withCredentials = true;
 const jsonInstance = axios.create({
   baseURL: '',
   headers: {
+    isallow: !PROCESS_ENV_NODE_ENV,
     post: { 'Content-Type': ContentType.json },
     delete: { 'Content-Type': ContentType.json },
     put: { 'Content-Type': ContentType.json }
@@ -48,6 +50,7 @@ const jsonInstance = axios.create({
 const formInstance = axios.create({
   baseURL: '',
   headers: {
+    isallow: !PROCESS_ENV_NODE_ENV,
     post: { 'Content-Type': ContentType.form },
     delete: { 'Content-Type': ContentType.form },
     put: { 'Content-Type': ContentType.form }
@@ -58,6 +61,7 @@ const formInstance = axios.create({
 const uploadInstance = axios.create({
   baseURL: '',
   headers: {
+    isallow: !PROCESS_ENV_NODE_ENV,
     post: { 'Content-Type': ContentType.form },
     delete: { 'Content-Type': ContentType.form },
     put: { 'Content-Type': ContentType.form }
