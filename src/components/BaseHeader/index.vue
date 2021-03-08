@@ -13,7 +13,6 @@
         </div>
         <div class="header_right">
           <!-- 登录注册路由 -->
-          <router-link to="/">登录</router-link>
           <a href="#" @click="toggleShow = !toggleShow">
             <img src="@/images/base/mobile.png" class="mobile_img">慧联运APP
           </a>

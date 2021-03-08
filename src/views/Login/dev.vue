@@ -15,32 +15,40 @@
         <el-form
           ref="formData"
           :model="formData"
+          :rules="rules"
           label-width="0px">
-          <el-form-item>
+          <el-form-item prop="cookies">
             <el-input
-              v-model="formData.cookie"
-              placeholder="请输入cookie"
+              v-model="formData.cookies"
+              placeholder="请输入cookies"
               clearable />
           </el-form-item>
           <div class="loginbtn" style="text-align: center">
             <el-button type="primary" @click="loginFun('formData')">
-              立即登录
+              立即登录（适合接口联调）
             </el-button>
           </div>
         </el-form>
+        <div class="loginbtn" style="text-align: center; margin-top: 20px;">
+          <el-button type="primary" @click="loginNoFun()" plain>
+            立即开发（适合样式调整）
+          </el-button>
+        </div>
       </div>
     </div>
     <!-- 版权 -->
     <copyright />
   </div>
 </template>
+
 <script >
 import Cookies from 'js-cookie';
 import * as TYPE from '@/store/mutation-types';
+import userInfo from '@/mock/userInfo.js';
+// 头部、尾部、登录可选择展示
 import BaseHeader from '@/components/BaseHeader/index.vue';
 import Copyright from '@/components/Copyright/index.vue';
 import LoginSwitch from '@/components/LoginSwitch/index.vue';
-import userInfo from '@/mock/userInfo.js';
 
 export default {
   components: {
@@ -52,20 +60,33 @@ export default {
     return {
       isTrue: true,
       formData: {
-        cookie: '',
+        cookies: '',
       },
+      rules: {
+        cookies: [{ required: true, trigger: 'blur', message: '请输入Cookies' }],
+      }
     };
   },
   methods: {
     /**
-     * @name: 密码登录
-     */    
-    loginFun() {
-      Cookies.set('SHAREJSESSIONID', this.formData.cookie);
-      Cookies.set('tabNav', '[]');
-      this.$store.commit(TYPE.COOKIE_VAL, this.formData.cookie);
-      this.$store.commit(TYPE.USER_INFO, userInfo);
+     * @name: 立即开发
+     */
+    loginNoFun() {
       window.location.href = window.location.origin + '/#/admin';
+    },
+    /**
+     * @name: Cookies登录
+     */
+    loginFun(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          Cookies.set('SHAREJSESSIONID', this.formData.cookies);
+          Cookies.set('tabNav', '[]');
+          this.$store.commit(TYPE.COOKIE_VAL, this.formData.cookies);
+          this.$store.commit(TYPE.USER_INFO, userInfo);
+          window.location.href = window.location.origin + '/#/admin';
+        }
+      });
     },
   },
 };
@@ -87,7 +108,6 @@ export default {
 .center_box { height: 305px; }
 .loginbtn .el-button--small {
   padding: 12px 150px;
-  background: #428bca;
   font-size: 18px;
 }
 .el-form >>> .el-input__inner { padding: 20px 12px; }

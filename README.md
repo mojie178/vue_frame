@@ -1,4 +1,5 @@
 # 慧联运平台
+> 在使用中如有问题或者想法，请积极交流反馈，3Q
 
 ## src 文件说明
 ```
@@ -17,24 +18,29 @@
 + views         页面视图文件
 ```
 
-## Project setup
+## 业务流程
 ```
+此处说明业务流程
+```
+
+## 注意事项
+```
+此处说明注意事项
+```
+
+## 项目设置
+```
+# 安装依赖
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+# 启动项目
 yarn run serve
-```
 
-### Compiles and minifies for production
-```
+# 打包项目
 yarn run build
-```
 
-### Lints and fixes files
-```
-yarn run lint
+# 规范检查
+yarn run build
 ```
 
 ### Customize configuration

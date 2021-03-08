@@ -24,7 +24,7 @@ export default {
   [types.COOKIE_VAL]: (state, val) => { // 添加 cookie
     state.cookieVal = val;
   },
-  [types.SET_URL]: (state, url) => {
+  [types.SET_URL]: (state, url) => { // 设置当前路由
     state.url = url
   },
   [types.ADD_NVA]: (state, route) => { // 添加头部面包屑

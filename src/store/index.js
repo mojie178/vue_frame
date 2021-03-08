@@ -10,7 +10,6 @@ import createPersistedState from 'vuex-persistedstate';
 import mutations from './mutations';
 import getters from './getters';
 import actions from './actions';
-import { PROCESS_ENV_NODE_ENV } from '../util/const.js';
 
 Vue.use(Vuex);
 
@@ -28,7 +27,7 @@ export default new Vuex.Store({
   getters,
   mutations,
   actions,
-  strict: !PROCESS_ENV_NODE_ENV,
+  strict: process.env.NODE_ENV !== 'production',
   plugins: [createPersistedState({
     key: 'vuex',
     reducer(state) {

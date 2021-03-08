@@ -16,8 +16,8 @@ const routers = [{
   name: 'login',
   path: '/',
   component: () => PROCESS_ENV_NODE_ENV
-    ? import( /* webpackChunkName: "login" */ '../views/Login/pro.vue')
-    : import( /* webpackChunkName: "login" */ '../views/Login/dev.vue')
+    ? import( /* webpackChunkName: "login" */ '../views/Login/pro.vue') // 线上单点登录
+    : import( /* webpackChunkName: "login" */ '../views/Login/dev.vue') // 本机调试登录
 }, {
   name: '404',
   path: '/404',

@@ -29,12 +29,14 @@
     <h2>开发要求</h2>
     <p>· 请先安装 <a href="https://nodejs.org/zh-cn/" target="_blank">Node</a>、<a href="https://git-scm.com/" target="_blank">Git</a>，并推荐使用 <a href="https://yarn.bootcss.com/" target="_blank">Yarn</a></p>
     <p>· 主流编辑器即可，推荐使用 <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> 编辑器，并推荐安装 koroFileHeader 等插件以便文件注释</p>
+    <p>. 请在 README.md 上说明该项目所负责的业务流程和注意事项</p>
     <!-- 本机接口联调说明 -->
     <h2>本机接口联调</h2>
     <h5>若不需接口联调，启动项目后，直接点击立即登录按钮即可，不需做任何配置</h5>
     <p>1、先将 vue.config.js 中的 devServer 配置代理路径设置为联调服务端的本机 IP 端口号</p>
-    <p>2、需服务端将前端本机 IP 端口号进行相关配置，防止接口跨域问题</p>
-    <p>3、本机启动项目后自动打开登录页面，输入 cookie 点击立即登录按钮后，进入主体业务视图</p>
+    <p>2、将 config/env.js 中的 baseUrl 进行配置为当前工程号</p>
+    <p>3、需服务端将前端本机 IP 端口号进行相关配置，防止接口跨域问题</p>
+    <p>4、本机启动项目后自动打开登录页面，输入 cookie 点击立即登录按钮后，进入主体业务视图</p>
     <!-- 注意事项 -->
     <h2>注意事项</h2>
     <p>· 文件夹、文件名、函数方法等，若无特殊要求，请使用小驼峰命名法（如 helloWorld）；css 样式命名若无特殊需求，请使用下划线分隔命名法（如 hello_world）</p>
@@ -44,8 +46,9 @@
     <p>· 原则上不允许删除公共基础类文件，若删除则必须在 Git 信息中备注说明，并在开发群中通知其他开发人员</p>
     <p>· 页面左侧导航 icon 配置名称一定要与图片名称相同，否则图标无法正常展示</p>
     <p>· 因用户中心服务端未做本地联调适配修改，暂时以假数据解决，可在 mock 中对应文件配置</p>
-    <p>· 测试环境未做本地联调适配修改，本机代理不能直接代理测试环境</p>
+    <p>· 若测试环境未做本地联调适配修改，本机代理不能直接代理测试环境</p>
     <p>· 请勿将 vue.config.js 中的 devServer 配置代理路径修改提交至代码仓库</p>
+    <p>· 打包文件名和 title 名称可在 vue.config.js 中配置</p>
     <!-- 注意事项及问题答复 -->
     <h2>遇到问题</h2>
     <p>文件引用报错？</p>
@@ -58,6 +61,16 @@
     <h5>回退到登录视图界面，填写最新 cookie 重新登录</h5>
     <p>多模块接口联调？</p>
     <h5>若本机联调视图界面，需用到其他服务端人员负责的接口，若他人已提交相关模块最新代码，则要求当前服务端人员同步最新代码，否则暂时以假数据或者其它方式解决</h5>
+    <!-- 老项目调试优化 -->
+    <h2>老项目调试优化步骤</h2>
+    <h5>可全文件搜索 PROCESS_ENV_NODE_ENV 查看关键修改点，具体项目可做相应自主调整</h5>
+    <p>1. 在 util/const.js 中配置 PROCESS_ENV_NODE_ENV 常量</p>
+    <p>2. 拷贝 views/Login/dev.vue 于老项目对应登录文件夹</p>
+    <p>3. 创建本地 mock 数据，包含 userInfo.js（用户信息）和 routes.js（本地路由信息），本地路由数据结构与后端返回相同</p>
+    <p>4. 在 router/index.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，登录界面动态展示登录界面和是否启用路由守卫</p>
+    <p>5. 在 store/getters.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，左侧导航动态使用本地路由或后端配置路由</p>
+    <p>6. 在 util/http.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态配置接口请求 isallow 配置</p>
+    <p>7. 在 views/Index/index.vue 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态修改退出登录</p>
   </layout>
 </template>
 
@@ -114,6 +127,10 @@ export default {
           name: 'PicShow',
           explain: '图片大图展示',
           remark: '支持放大、缩小、拖拽和旋转'
+        }, {
+          name: 'Tinymce',
+          explain: '富文本编辑框',
+          remark: '基于 Tinymce 搭建，图片直接上传功能暂不支持，引入图片需使用链接方式引入'
         }, {
           name: 'Upload',
           explain: '公共切片上传',
