@@ -165,7 +165,10 @@ export default {
     $route: {
       immediate: true,
       handler(val) {
-        this.$store.commit(types.ADD_NVA, val);
+        this.$store.commit(types.ADD_NVA, val); // 添加面包屑
+        // 添加路径已判断按钮权限
+        const uri = val.path.substr(val.path.indexOf('/admin/') + 6, val.path.length);
+        this.$store.dispatch('getNode', uri);
       }
     },
     '$store.state.tabNav': {

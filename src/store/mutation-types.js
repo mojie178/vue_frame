@@ -19,3 +19,5 @@ export const ADD_NVA = 'addNav'; // 添加面包屑
 export const DEL_NVA = 'delNav'; // 删除面包屑
 
 export const SET_URL = 'setUrl'; // 设置当前路由
+
+export const SET_NODE = 'getNode'; // 获取显示元素

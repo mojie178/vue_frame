@@ -1336,6 +1336,13 @@ address@^1.1.2:
   resolved "https://registry.npmjs.org/address/-/address-1.1.2.tgz"
   integrity sha512-aT6camzM4xEA54YVJYSqxz1kv4IHnQZRtThJJHhUMRExaU5spC7jX5ugSwTaTgJliIgs4VhZOk7htClvQ/LmRA==
 
+af-table-column@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/af-table-column/-/af-table-column-1.0.3.tgz#5cf6b461054a8c8a7446a51623717d6c205d5d4f"
+  integrity sha512-zdI7MsmppAZemofr4zM7Kae7CGQGlyfnbTj6l0DgNDfRtzJs7ryiX7fbAq96MCRtt4EVcrZ+fX+rnpznrpB34Q==
+  dependencies:
+    vue "^2.6.10"
+
 aggregate-error@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/aggregate-error/-/aggregate-error-3.0.1.tgz"
@@ -8345,7 +8352,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.5.17:
+vue@^2.5.17, vue@^2.6.10:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==

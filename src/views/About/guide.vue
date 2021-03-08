@@ -45,9 +45,7 @@
     <p>· 若新增公共基础类文件，请文件头部注释文件说明、创建者等信息，所有全局变量、方法必须注释说明，函数方法额外注释入参格式、返回格式</p>
     <p>· 原则上不允许删除公共基础类文件，若删除则必须在 Git 信息中备注说明，并在开发群中通知其他开发人员</p>
     <p>· 页面左侧导航 icon 配置名称一定要与图片名称相同，否则图标无法正常展示</p>
-    <p>· 因用户中心服务端未做本地联调适配修改，暂时以假数据解决，可在 mock 中对应文件配置</p>
-    <p>· 若测试环境未做本地联调适配修改，本机代理不能直接代理测试环境</p>
-    <p>· 请勿将 vue.config.js 中的 devServer 配置代理路径修改提交至代码仓库</p>
+    <p>· 若服务端未做本地联调适配修改，暂时以假数据解决，可在 mock 中对应文件配置</p>
     <p>· 打包文件名和 title 名称可在 vue.config.js 中配置</p>
     <!-- 注意事项及问题答复 -->
     <h2>遇到问题</h2>
@@ -61,16 +59,19 @@
     <h5>回退到登录视图界面，填写最新 cookie 重新登录</h5>
     <p>多模块接口联调？</p>
     <h5>若本机联调视图界面，需用到其他服务端人员负责的接口，若他人已提交相关模块最新代码，则要求当前服务端人员同步最新代码，否则暂时以假数据或者其它方式解决</h5>
+    <p>本地联调，数据不同步？</p>
+    <h5>可手动更换 mock 数据信息，只要数据结构符合要求即可</h5>
     <!-- 老项目调试优化 -->
     <h2>老项目调试优化步骤</h2>
     <h5>可全文件搜索 PROCESS_ENV_NODE_ENV 查看关键修改点，具体项目可做相应自主调整</h5>
     <p>1. 在 util/const.js 中配置 PROCESS_ENV_NODE_ENV 常量</p>
     <p>2. 拷贝 views/Login/dev.vue 于老项目对应登录文件夹</p>
-    <p>3. 创建本地 mock 数据，包含 userInfo.js（用户信息）和 routes.js（本地路由信息），本地路由数据结构与后端返回相同</p>
+    <p>3. 创建本地 mock 数据，包含 userInfo.js（用户信息）、 routes.js（本地路由信息）和 nodes.js（本地按钮权限），本地 mock 数据结构与后端返回相同</p>
     <p>4. 在 router/index.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，登录界面动态展示登录界面和是否启用路由守卫</p>
     <p>5. 在 store/getters.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，左侧导航动态使用本地路由或后端配置路由</p>
-    <p>6. 在 util/http.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态配置接口请求 isallow 配置</p>
-    <p>7. 在 views/Index/index.vue 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态修改退出登录</p>
+    <p>6. 在 store/actions.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，左侧导航动态使用本地按钮权限或后端配置路由</p>
+    <p>7. 在 util/http.js 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态配置接口请求 isallow 配置</p>
+    <p>8. 在 views/Index/index.vue 中引入 PROCESS_ENV_NODE_ENV，并根据该环境常量，动态修改退出登录</p>
   </layout>
 </template>
 
@@ -172,8 +173,12 @@ export default {
       }, {
         name: 'mock',
         explain: '本机调试运行数据',
-        remark: '所有数据的数据结构请与 production 环境保持一致，routes.js 和 userInfo.js 请勿删除',
+        remark: '所有数据的数据结构请与 production 环境保持一致，routes.js 、userInfo.js 和 nodes.js 请勿删除',
         children: [{
+          name: 'nodes.js',
+          explain: '模拟 production 环境权限配置',
+          remark: '本机提供增删改查基本权限，具体展示隐藏以产线为准'
+        }, {
           name: 'routes.js',
           explain: '模拟 production 环境路由数据',
           remark: '一级路由 path 务必带 /，二级路由不需带 /，此处因公共配置平台历史遗留问题造成'

@@ -25,7 +25,10 @@ export default {
     state.cookieVal = val;
   },
   [types.SET_URL]: (state, url) => { // 设置当前路由
-    state.url = url
+    state.url = url;
+  },
+  [types.SET_NODE]: (state, nodes) => { // 获取元素展示权限
+    state.nodes = nodes;
   },
   [types.ADD_NVA]: (state, route) => { // 添加头部面包屑
     state.tabNav.forEach((item, i) => {

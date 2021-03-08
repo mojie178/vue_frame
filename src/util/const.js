@@ -4,6 +4,7 @@
  * @Author: shaojihao
  */
 
+import store from '../store';
 import { findDictentryByDicttypeName } from '@/api';
 
 // 当前环境标识
@@ -47,28 +48,6 @@ export const getDicList = (dicttypeName) => {
     })
   });
   return Promise.all(arr);
-}
-
-//控制元素显示
-export function setDisplay(name, value) {
-  if (value && value.length) {
-    let display = value.filter(item => item.eleCode === name)[0] && value.filter(item => item.eleCode === name)[0].display
-    if (display === 'none') {
-      return false
-    } else {
-      return  true
-    }
-  } else {
-    return  true
-  }
-}
-
-//控制元素可用
-export function setDisabled(name, value) {
-  if (value && value.length) {
-    let disabled = value.filter(item => item.eleCode === name)[0] && value.filter(item => item.eleCode === name)[0].disabled
-    return disabled === 'false' ? true : false;
-  } else { return false; }
 }
 
 // 检查浏览器版本
@@ -121,4 +100,20 @@ export function handId(arr, id) {
 // 应对Chrome浏览器下载限制，将返回链接http更换承https
 export function httpToHttps(url) {
   return /^http:\/\//.test(url) ? `https://${/(?<=http:\/\/).*/.exec(url)[0]}` : url
+}
+
+// 控制元素显示 v-if="$setDisplay('name')"
+export function setDisplay(name) {
+  if (store.state.nodes && store.state.nodes.length) {
+    let display = store.state.nodes.filter(item => item.eleCode === name)[0] && store.state.nodes.filter(item => item.eleCode === name)[0].display;
+    return display !== 'none';
+  } else { return true; }
+}
+
+// 控制元素可用 :disabled="$setDisabled('name')"
+export function setDisabled(name) {
+  if (store.state.nodes && store.state.nodes.length) {
+    let disabled = store.state.nodes.filter(item => item.eleCode === name)[0] && store.state.nodes.filter(item => item.eleCode === name)[0].disabled;
+    return disabled === 'false';
+  } else { return false; }
 }

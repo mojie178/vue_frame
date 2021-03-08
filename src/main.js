@@ -9,6 +9,7 @@ import vueRouter from 'vue-router';
 import VueProgressBar from 'vue-progressbar';
 import echarts from 'echarts';
 import lodash from 'lodash';
+import AFTableColumn from 'af-table-column';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './styles/reset.less';
@@ -19,6 +20,7 @@ import router from './router';
 import store from './store';
 import * as filters from './filters';
 import * as directives from './directives';
+import { setDisplay, setDisabled } from '@/util/const';
 import AES from './util/cryptoJS';
 
 // 全局注册过滤器
@@ -33,6 +35,8 @@ for (const [key, value] of Object.entries(directives)) {
 // 阻止启动生产消息
 Vue.config.productionTip = false;
 
+// 引入表格自适应
+Vue.use(AFTableColumn);
 // 引入 element-ui
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 
@@ -42,6 +46,10 @@ Vue.prototype.$echarts = echarts; // 引用 echarts
 // 引入加密解密
 Vue.prototype.$Encrypt = AES.Encrypt;
 Vue.prototype.$Decrypt = AES.Decrypt;
+
+// 元素显示隐藏
+Vue.prototype.$setDisplay = setDisplay;
+Vue.prototype.$setDisabled = setDisabled;
 
 // 引入 vue-progress-bar
 Vue.use(VueProgressBar, {

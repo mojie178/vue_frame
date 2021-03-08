@@ -20,6 +20,7 @@ const state = {
   userInfo: '', // 当前用户信息
   tabNav: [], // 头部动态标签导航
   url: '', // 当前链接
+  nodes: [], // 元素展示权限
 };
 
 export default new Vuex.Store({
@@ -35,7 +36,8 @@ export default new Vuex.Store({
         token: state.token,
         url: state.url,
         cookieVal: state.cookieVal,
-        userInfo: state.userInfo
+        userInfo: state.userInfo,
+        nodes: state.nodes
       };
     }
   })]

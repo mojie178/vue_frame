@@ -12,21 +12,32 @@ let downloadURL = ''; // 文件下载地址
 if (process.env.NODE_ENV === 'development') {
   baseURL = {
     baseUrl: '/xxxxxx', // 业务平台 牵涉本机代理，不需写全路径
-    authorityApi: 'https://testauth.ahggwl.com/tms-authority-mng', // 字典平台
+    authorityApi: 'https://testauth.ahggwl.com/authority-mng', // 字典平台
     logout: 'https://testsso.ahggwl.com', // 退出登录
   };
   uploadURL = 'https://testfile.ahggwl.com/api/chunk';
   upLoadMergeURL = 'https://testfile.ahggwl.com/api/merge/';
   downloadURL = 'https://testfile.ahggwl.com/api/download?fileId=';
 } else if (process.env.NODE_ENV === 'production') {
-  baseURL = {
-    baseUrl: 'https://xxxxxxxxxxxxxx/xxxxxx', // 业务平台
-    authorityApi: 'https://testauth.ahggwl.com/tms-authority-mng', // 字典平台
-    logout: 'https://testsso.ahggwl.com', // 退出登录
+  if (window.location.origin == 'https://xxxxxxxxxxx') {
+    baseURL = {
+      baseUrl: 'https://xxxxxxxxxxxxxx/xxxxxx', // 业务平台
+      authorityApi: 'https://auth.ahggwl.com/authority-mng', // 字典平台
+      logout: 'https://sso.ahggwl.com', // 退出登录
+    }
+    uploadURL = 'https://file.ahggwl.com/api/chunk';
+    upLoadMergeURL = 'https://file.ahggwl.com/api/merge/';
+    downloadURL = 'https://file.ahggwl.com/api/download?fileId=';
+  } else {
+    baseURL = {
+      baseUrl: 'https://xxxxxxxxxxxxxx/xxxxxx', // 业务平台
+      authorityApi: 'https://testauth.ahggwl.com/authority-mng', // 字典平台
+      logout: 'https://testsso.ahggwl.com', // 退出登录
+    }
+    uploadURL = 'https://testfile.ahggwl.com/api/chunk';
+    upLoadMergeURL = 'https://testfile.ahggwl.com/api/merge/';
+    downloadURL = 'https://testfile.ahggwl.com/api/download?fileId=';
   }
-  uploadURL = 'https://testfile.ahggwl.com/api/chunk';
-  upLoadMergeURL = 'https://testfile.ahggwl.com/api/merge/';
-  downloadURL = 'https://testfile.ahggwl.com/api/download?fileId=';
 }
 
 module.exports = {
