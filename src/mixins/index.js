@@ -66,7 +66,7 @@ export const tableMixin = {
   },
   beforeRouteEnter(to, from, next) { // 从详情页返回，读取存储
     next(vm => {
-      if (from.query.id) vm.handleShowFormInline();
+      if (from.query.id) vm.handleShowFormInline(vm.fetchTableData); // 进入页面赋值搜索条件再拉列表
       else {
         const sessionName = vm.$route.path;
         sessionStorage.removeItem(sessionName);
@@ -100,7 +100,7 @@ export const tableMixin = {
      * @param {*}
      * @return {*}
      */    
-    handleShowFormInline() {
+    handleShowFormInline(callback) {
       const sessionName = this.$route.path; // 获取同路由标识符存储数据
       const formInlineSession = sessionStorage.getItem(sessionName);
       if (formInlineSession) {
@@ -109,6 +109,7 @@ export const tableMixin = {
         this.pageNum = sessionJosn.pageNum;
         this.pageSize = sessionJosn.pageSize;
       }
+      this.$nextTick(() => callback && callback()); // 调用回调方法
     },
     /**
      * @name: 列表页权限回显
