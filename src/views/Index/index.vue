@@ -41,7 +41,7 @@
             :key="item.meta.id"
             :index="item.meta.id + ''">
             <template slot="title">
-              <img :src="require(`../../images/menu/${item.icon}.png`)" class="icon_box_show" />
+              <img :src="downloadURL + item.icon" class="icon_box_show" />
               <span style="margin-left: 15px">{{ item.meta.menuName }}</span>
             </template>
             <el-menu-item-group>
@@ -73,7 +73,7 @@
             :index="`/admin/${item.path}`"
             :key="item.meta.id"
             :route="{ path: `/admin/${item.path}` }">
-            <img :src="require(`../../images/menu/${item.icon}.png`)" class="icon_box_show" />
+            <img :src="downloadURL + item.icon" class="icon_box_show" />
             <span slot="title" style="margin-left: 15px;">
               {{item.meta.menuName}}
             </span>
@@ -142,6 +142,7 @@ import qs from 'qs';
 import Cookies from 'js-cookie';
 import * as types from '@/store/mutation-types';
 import { mapState } from 'vuex';
+import { downloadURL } from '@/config/env';
 import { PROCESS_ENV_NODE_ENV } from '@/util/const';
 import { spLogOut, spLogin, spLogOutSys } from '@/api';
 
@@ -149,6 +150,7 @@ export default {
   name: 'index',
   data() {
     return {
+      downloadURL,
       isCollapse: false, // 展开收起菜单
       showModal: false, // 移动端左侧导航展开时的背景层
       isMobile: false, // 是否为手机
